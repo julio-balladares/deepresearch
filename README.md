@@ -28,7 +28,7 @@ uv run python -m unittest discover -s tests
 
 ## Configuration
 
-Required:
+Required environment variables:
 
 ```bash
 SERPAPI_KEY=your_serpapi_key
@@ -37,7 +37,31 @@ MODEL_NAME=openai/gpt-4.1-mini
 OPENAI_API_KEY=your_openai_api_key
 ```
 
-PowerShell example:
+### Linux and macOS
+
+For Bash or Zsh:
+
+```bash
+export SERPAPI_KEY="your_serpapi_key"
+export LLM_PROVIDER="openai"
+export MODEL_NAME="openai/gpt-4.1-mini"
+export OPENAI_API_KEY="your_openai_api_key"
+```
+
+To make the variables persistent, add them to `~/.bashrc`, `~/.zshrc`, or the corresponding shell configuration file:
+
+```bash
+echo 'export SERPAPI_KEY="your_serpapi_key"' >> ~/.bashrc
+echo 'export LLM_PROVIDER="openai"' >> ~/.bashrc
+echo 'export MODEL_NAME="openai/gpt-4.1-mini"' >> ~/.bashrc
+echo 'export OPENAI_API_KEY="your_openai_api_key"' >> ~/.bashrc
+
+source ~/.bashrc
+```
+
+If you use Zsh, replace `~/.bashrc` with `~/.zshrc`.
+
+### Windows PowerShell
 
 ```powershell
 $env:SERPAPI_KEY = "your_serpapi_key"
@@ -45,6 +69,9 @@ $env:LLM_PROVIDER = "openai"
 $env:MODEL_NAME = "openai/gpt-4.1-mini"
 $env:OPENAI_API_KEY = "your_openai_api_key"
 ```
+
+These PowerShell variables are available only in the current terminal session.
+
 
 Supported provider variables:
 
